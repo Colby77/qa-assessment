@@ -29,6 +29,7 @@ app.use('/js', express.static(path.join(__dirname, './public/index.js')))
 app.get('/api/robots', (req, res) => {
     try {
         res.status(200).send(bots)
+        rollbar.info('Someone got a list of robots')
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
         res.sendStatus(400)
