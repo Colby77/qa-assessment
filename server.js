@@ -74,8 +74,9 @@ app.post('/api/duel', (req, res) => {
         } else {
             playerRecord.wins++
             res.status(200).send('You won!')
+            rollbar.info('Computer Defeated!')
         }
-        rollbar.info('Duel performed')
+        rollbar.info('Duel Over')
     } catch (error) {
         console.log('ERROR DUELING', error)
         res.sendStatus(400)
