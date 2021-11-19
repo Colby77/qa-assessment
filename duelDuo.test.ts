@@ -32,13 +32,14 @@ test('Clicking draw button displays div with id choices', async () => {
     await driver.sleep(3000)
 })
 
-// test('Clicking add to duo displays player-duo div', async () => {
-//     let addBot = await driver.findElement(By.xpath('(//*[text()="Add to Duo"]'))
-//     // let addBot = await driver.findElement(By.xpath('(//button[class="bot-btn"])'))
-//     // let addBot = await driver.findElement(By.className('bot-btn'))
-//     await addBot.click()
-//     await driver.sleep(3000)
-// })
+// second automated test doesn't work
+test('Clicking add to duo displays player-duo div', async () => {
+    // let addBot = await driver.findElement(By.xpath('//div[@class="bot-card outline"'))
+    let addBot = await driver.findElement(By.xpath('(//button[@class="bot-btn"])'))
+    // let addBot = await driver.findElement(By.className('bot-btn'))
+    await addBot.click()
+    await driver.sleep(3000)
+})
 
 afterAll(async () => {
     driver.quit()
